@@ -1,0 +1,29 @@
+.navbar {
+    background-color: rgb(122, 225, 213);
+    display: flex;
+    list-style: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar > li:last-child {
+    margin-left: auto;
+}
+
+.navbar > li {
+    padding: 15px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+}
+
+.navbar > li:hover {
+    padding-top: 10px;
+    background-color: #4c9b90;
+}
+
+.navbar > li > a {
+    text-decoration: none;
+    color: rgb(254, 254, 254);
+    text-shadow: 2px 2px #4c9b90;
+}
