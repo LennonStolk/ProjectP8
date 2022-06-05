@@ -15,6 +15,10 @@
             border-bottom: solid #69c2b6 2px;
             padding-bottom: 8px;
         }
+        .navbar > #nav-announcements:hover > a {
+            color: rgb(27, 90, 86);
+            border-bottom: solid rgb(27, 90, 86) 2px;
+        }
     </style>
 </body>
 </html>
