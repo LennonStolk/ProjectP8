@@ -9,6 +9,12 @@
 </head>
 <body>
     <?php include "../Includes/navbar.php" ?>
-    <img src="../Assets/tomaat.gif">
+    <style>
+        .navbar > #nav-documents > a {
+            color: #69c2b6;
+            border-bottom: solid #69c2b6 2px;
+            padding-bottom: 8px;
+        }
+    </style>
 </body>
 </html>

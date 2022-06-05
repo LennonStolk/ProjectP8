@@ -1,4 +1,73 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main {
+    margin: 50px;
+}
+
+.product-search {
+    border-radius: 10px;
+    height: 40px;
+    margin: 0 10px;
+    border: none;
+    color: rgb(95, 95, 95);
+    box-shadow: inset 20px 20px 60px #e6e6e6, inset -20px -20px 60px #ffffff;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.product-search-result {
+    color: rgb(95, 95, 95);
+    font-weight: normal;
+    margin: 40px 0px 10px 10px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    border: 1px solid rgb(220, 220, 220);
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgb(172, 204, 255) 0%, rgb(203, 255, 182)100%);
+    overflow: hidden;
+    margin: 10px;
+}
+
+.product-image {
+    width: 300px;
+    height: 300px;
+}
+
+.product-description {
+    background: white;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.product-description > p {
+    display: block;
+    padding: 0;
+    margin: 0;
+    height: min-content;
+    width: 45%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgb(76, 76, 76);
+}
+
+.product-description > .product-label {
+    font-weight: normal;
+    color: rgb(152, 152, 152);
 }

@@ -3,27 +3,28 @@
 </style>
 
 <ul class="navbar">
-    <li>
+    <img src="../Assets/logo.png">
+    <li id="nav-home">
         <a href="home.php">
             Home
         </a>
     </li>
-    <li>
+    <li id="nav-products">
         <a href="products.php">
             Products
         </a>
     </li>
-    <li>
+    <li id="nav-announcements">
         <a href="announcements.php">
             Announcements
         </a>
     </li>
-    <li>
+    <li id="nav-documents">
         <a href="documents.php">
             Documents
         </a>
     </li>
-    <li>
+    <li id="nav-login">
         <a href="login.php">
             Log in
         </a>
