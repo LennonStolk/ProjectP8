@@ -1,6 +1,8 @@
 CREATE DATABASE IF NOT EXISTS `nftshop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `nftshop`;
 
+
+
 /* Producten tabel */
 
 CREATE TABLE `nftshop_products` (
@@ -21,3 +23,19 @@ ALTER TABLE `nftshop_products`
 
 ALTER TABLE `nftshop_products`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+
+
+/* Gebruikers tabel*/
+
+CREATE TABLE `nftshop_users` (
+  `id` int(10) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `nftshop_users`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `nftshop_users`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
