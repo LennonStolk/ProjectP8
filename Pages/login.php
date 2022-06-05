@@ -9,6 +9,22 @@
 </head>
 <body>
     <?php include "../Includes/navbar.php" ?>
-    <?php echo "Log in" ?>
+    <section class="main">
+        <?php 
+            // Get user login inputs
+            $username = (isset($_POST["username"]))
+                ? $_POST["username"]
+                : "";
+            $password = (isset($_POST["password"]))
+                ? $_POST["password"]
+                : "";
+        ?>
+        <form action="login.php" method="POST" autocomplete="off" class="log-in-form">
+            <h3 class="title">Log in</h3>
+            <input type="text" name="username" class="text-input" placeholder="Username">
+            <input type="password" name="username" class="text-input" placeholder="Password">
+            <input type="submit" value="Submit" class="button">
+        </form>
+    </section>
 </body>
 </html>

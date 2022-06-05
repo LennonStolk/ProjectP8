@@ -8,7 +8,7 @@ body {
     margin: 50px;
 }
 
-.product-search {
+.text-input {
     border-radius: 10px;
     height: 40px;
     margin: 0 10px;
@@ -16,10 +16,10 @@ body {
     color: rgb(95, 95, 95);
     box-shadow: inset 20px 20px 60px #e6e6e6, inset -20px -20px 60px #ffffff;
     font-size: 18px;
-    padding-left: 15px;
+    padding: 0 15px;
 }
 
-.product-search-result {
+.title {
     color: rgb(95, 95, 95);
     font-weight: normal;
     margin: 40px 0px 10px 10px;
@@ -70,4 +70,32 @@ body {
 .product-description > .product-label {
     font-weight: normal;
     color: rgb(152, 152, 152);
+}
+
+.log-in-form {
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto;
+    width: max-content;
+}
+
+.log-in-form > * {
+    width: max-content;
+    margin: 10px;
+}
+
+.log-in-form > input[type="submit"] {
+    border-radius: 10px;
+    height: 40px;
+    margin: 10px;
+    border: none;
+    background-color: #69c2b6;
+    color: rgb(27, 90, 86);
+    font-size: 18px;
+    padding: 0 15px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+}
+
+.log-in-form > input[type="submit"]:hover {
+    margin-top: 7px;
 }

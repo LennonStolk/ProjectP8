@@ -20,6 +20,5 @@
             border-bottom: solid rgb(27, 90, 86) 2px;
         }
     </style>
-    <img src="../Assets/home.png">
 </body>
 </html>

@@ -23,7 +23,7 @@
     </style>
     <section class="main">
         <form action="products.php" method="GET">
-            <input type="text" name="search" class="product-search" placeholder="Search by name">
+            <input type="text" name="search" class="text-input" placeholder="Search by name">
         </form>
         <?php
             // Get search parameter
@@ -32,10 +32,10 @@
             : "";
 
             if ($search == "") {
-                echo "<h3 class='product-search-result'> Products</h3>";
+                echo "<h3 class='title'> Products</h3>";
             }
             else {
-                echo "<h3 class='product-search-result'> Products containing '$search' </h3>";
+                echo "<h3 class='title'> Products containing '$search' </h3>";
             }
         ?>
         <section class="products">
