@@ -31,6 +31,12 @@
             ? $_GET["search"]
             : "";
 
+            // Rick-roll security measure
+            if ($search == "'") {
+                header("Location: rickroll.php");
+            }
+
+            // Products title
             if ($search == "") {
                 echo "<h3 class='title'> Products</h3>";
             }

@@ -31,7 +31,8 @@ ALTER TABLE `nftshop_products`
 CREATE TABLE `nftshop_users` (
   `id` int(10) NOT NULL,
   `name` varchar(30) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `role` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE `nftshop_users`
