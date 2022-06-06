@@ -12,17 +12,35 @@
     <section class="main">
         <?php 
             // Get user login inputs
-            $username = (isset($_POST["username"]))
-                ? $_POST["username"]
+            $username = (isset($_GET["username"]))
+                ? $_GET["username"]
                 : "";
-            $password = (isset($_POST["password"]))
-                ? $_POST["password"]
+            $password = (isset($_GET["password"]))
+                ? $_GET["password"]
                 : "";
+
+            // Get products based on parameter
+            include_once "../Includes/db.php";
+            $sql = 'SELECT * FROM nftshop_users WHERE `name` = :name';
+            $vars = ["name" => $username];
+            $stmt = $db->prepare($sql);
+            $stmt->execute($vars);
+            $user = $stmt->fetch();
+
+            if ($user !== false) {
+                if (password_verify($password, $user["password"])) {
+                    session_start();
+                    $_SESSION["username"] = $user["name"];
+                    $_SESSION["role"] = $user["role"];
+                    header("Location: home.php");
+                }
+            }
+
         ?>
-        <form action="login.php" method="POST" autocomplete="off" class="log-in-form">
+        <form action="login.php" method="GET" class="log-in-form">
             <h3 class="title">Log in</h3>
             <input type="text" name="username" class="text-input" placeholder="Username">
-            <input type="password" name="username" class="text-input" placeholder="Password">
+            <input type="password" name="password" class="text-input" placeholder="Password">
             <input type="submit" value="Submit" class="button">
         </form>
     </section>

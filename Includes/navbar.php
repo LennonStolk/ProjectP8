@@ -26,7 +26,15 @@
     </li>
     <li id="nav-login">
         <a href="login.php">
-            Log in
+            <?php
+                session_start();
+                if (isset($_SESSION["username"])) {
+                    echo "<a href='logout.php'>Log out ({$_SESSION['username']})</a>";
+                }
+                else {
+                    echo "Log in";
+                }
+            ?>
         </a>
     </li>
 </ul>
