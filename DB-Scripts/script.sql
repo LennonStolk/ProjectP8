@@ -26,7 +26,7 @@ ALTER TABLE `nftshop_products`
 
 
 
-/* Gebruikers tabel*/
+/* Gebruikers tabel */
 
 CREATE TABLE `nftshop_users` (
   `id` int(10) NOT NULL,
@@ -45,3 +45,24 @@ ALTER TABLE `nftshop_users`
 
 ALTER TABLE `nftshop_users`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+
+
+/* Aankondigingen tabel */
+
+CREATE TABLE `nftshop_announcements` (
+  `id` int(10) NOT NULL,
+  `author` varchar(30) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `date` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `nftshop_announcements` (`id`, `author`, `content`, `date`) VALUES
+(1, 'superuser', 'Hello world', 1654552708),
+(2, 'superuser', 'Ik heet u van harte welkom bij nft-shop -Lennon', 1654552750);
+
+ALTER TABLE `nftshop_announcements`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `nftshop_announcements`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
