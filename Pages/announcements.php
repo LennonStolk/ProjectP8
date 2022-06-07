@@ -32,9 +32,12 @@
 
                 // Display products
                 foreach ($announcements as $announcement) {
+                    $author = $announcement["author"];
+                    $content = htmlspecialchars($announcement["content"]);
+
                     echo "<div style='border: 1px solid black'>
-                            <p>{$announcement["author"]}</p>
-                            <p>{$announcement["content"]}</p>
+                            <p>$author</p>
+                            <p>$content</p>
                         </div>";
                 }
             ?>
