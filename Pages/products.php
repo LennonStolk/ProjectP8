@@ -41,6 +41,7 @@
                 echo "<h3 class='title'> Products</h3>";
             }
             else {
+                $search = htmlspecialchars($search);
                 echo "<h3 class='title'> Products containing '$search' </h3>";
             }
         ?>
