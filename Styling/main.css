@@ -105,3 +105,33 @@ body {
 .log-in-form > input[type="submit"]:hover {
     margin-top: 7px;
 }
+
+.announcements {
+    display: flex;
+    flex-direction: column;
+}
+
+.announcement {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 100ms;
+    font-size: large;
+    box-shadow: inset 20px 20px 60px #e6e6e6, inset -20px -20px 60px #ffffff;
+}
+
+.announcement-author {
+    color: #69c2b6;
+}
+
+.announcement-meta {
+    color: rgb(76, 76, 76);
+}
+
+.announcement > * {
+    margin: 5px;
+    padding: 5px;
+}

@@ -21,7 +21,16 @@
         }
     </style>
     <section class="main">
-        <section class="products">
+        <section class="announcements">
+            <?php
+                $role = (isset($_SESSION["role"]))
+                ? $_SESSION["role"]
+                : "";
+
+                if ($role == "ADMIN" || $role == "SUPERUSER"):
+            ?>
+                <input type="text" class="text-input" placeholder="Content"></div>
+            <?php endif ?>
             <?php 
                 // Get products based on parameter
                 include_once "../Includes/db.php";
@@ -30,13 +39,22 @@
                 $stmt->execute();
                 $announcements = $stmt->fetchAll();
 
+                // Sort newest first
+                function date_sort($a, $b) {
+                    return ($b["date"]) - ($a["date"]);
+                }
+                usort($announcements, "date_sort");
+
                 // Display products
                 foreach ($announcements as $announcement) {
                     $author = $announcement["author"];
                     $content = htmlspecialchars($announcement["content"]);
+                    $date = date("d M Y", $announcement["date"]);
 
-                    echo "<div style='border: 1px solid black'>
-                            <p>$author</p>
+                    echo "<div class='announcement'>
+                            <p class='announcement-meta'>
+                                <span class='announcement-author'>$author</span> on $date
+                            </p>
                             <p>$content</p>
                         </div>";
                 }
