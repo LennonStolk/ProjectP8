@@ -29,10 +29,14 @@
 
                 if ($role == "ADMIN" || $role == "SUPERUSER"):
             ?>
-                <input type="text" class="text-input" placeholder="Content"></div>
+                <form action="createannouncement.php" method="POST" class="announcement-form">
+                    <h3 class='title'> New announcement</h3>
+                    <input type="text" class="text-input" placeholder="Content"></div>
+                    <input type="submit" value="Submit" class="button">
+                </form>
             <?php endif ?>
             <?php 
-                // Get products based on parameter
+                // Get announcements
                 include_once "../Includes/db.php";
                 $sql = 'SELECT * FROM nftshop_announcements';
                 $stmt = $db->prepare($sql);
@@ -45,7 +49,7 @@
                 }
                 usort($announcements, "date_sort");
 
-                // Display products
+                // Display announcements
                 foreach ($announcements as $announcement) {
                     $author = $announcement["author"];
                     $content = htmlspecialchars($announcement["content"]);
