@@ -38,6 +38,12 @@ body {
     background: linear-gradient(180deg, rgb(172, 204, 255) 0%, rgb(203, 255, 182)100%);
     overflow: hidden;
     margin: 10px;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 100ms;
+}
+
+.product:hover {
+    filter: brightness(0.9);
+    transform: rotateZ(3deg);
 }
 
 .product-image {
