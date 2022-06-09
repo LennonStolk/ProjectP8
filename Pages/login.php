@@ -32,7 +32,7 @@
                     session_start();
                     $_SESSION["username"] = $user["name"];
                     $_SESSION["role"] = $user["role"];
-                    header("Location: home.php");
+                    header("Location: products.php");
                 }
             }
 

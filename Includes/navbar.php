@@ -4,11 +4,6 @@
 
 <ul class="navbar">
     <img src="../Assets/logo.png">
-    <li id="nav-home">
-        <a href="home.php">
-            Home
-        </a>
-    </li>
     <li id="nav-products">
         <a href="products.php">
             Products
