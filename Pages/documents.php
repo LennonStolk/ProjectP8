@@ -24,8 +24,21 @@
         <h3 class='title'>Files</h3>
         <section class="files">
             <article class="file">
-                <img width=40 height=52 src="../Assets/document.png">
+                <img src="../Assets/document.png" class="file-img">
                 <p>Bestandje.pdf</p>
+                <?php
+                    // Get role
+                    $role = (isset($_SESSION["role"]))
+                        ? $_SESSION["role"]
+                        : "";
+                    
+                    // Show download button for admin
+                    if ($role == "ADMIN"):
+                ?>
+                    <a href="documents.php?download=Bestandje.pdf">
+                        <img src="../Assets/download.png" class="download">
+                    </a>
+                <?php endif ?>
             </article>
         </section>
     </section>

@@ -172,26 +172,48 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;
+    box-shadow: 4px 4px 4px 0px rgb(236, 236, 236);
 }
 
 .file {
     box-shadow: inset 20px 20px 60px #e6e6e6, inset -20px -20px 60px #ffffff;
     border: 1px solid rgb(220, 220, 220);
     padding: 20px;
+    margin: 5px;
     width: 200px;
+    height: 60px;
     border-radius: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
+    background: linear-gradient(180deg, rgb(205, 224, 255) 0%, rgb(225, 255, 213)100%);
 }
 
-.file > img {
-    filter: drop-shadow(2px 2px 4px #989898);
-    margin-right: 20px;
+.file-img {
+    filter: drop-shadow(2px 2px 4px #bebebe);
+    height: 60px;
+    width: 45px;
+}
+
+.file > a {
+    align-self: flex-end;
+    margin: 0;
+}
+
+.download {
+    height: 24px;
+    width: 30px;
 }
 
 .file > p {
     margin: 0;
     color:rgb(76, 76, 76);
+    width: 160px;
+    text-align: right;
 }
+
