@@ -20,5 +20,14 @@
             border-bottom: solid rgb(27, 90, 86) 2px;
         }
     </style>
+    <section class="main">
+        <h3 class='title'>Files</h3>
+        <section class="files">
+            <article class="file">
+                <img width=40 height=52 src="../Assets/document.png">
+                <p>Bestandje.pdf</p>
+            </article>
+        </section>
+    </section>
 </body>
 </html>

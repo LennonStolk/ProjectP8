@@ -166,3 +166,32 @@ body {
 .announcement-form > input[type="submit"]:hover {
     transform: translateY(-3px);
 }
+
+.files {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.file {
+    box-shadow: inset 20px 20px 60px #e6e6e6, inset -20px -20px 60px #ffffff;
+    border: 1px solid rgb(220, 220, 220);
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.file > img {
+    filter: drop-shadow(2px 2px 4px #989898);
+    margin-right: 20px;
+}
+
+.file > p {
+    margin: 0;
+    color:rgb(76, 76, 76);
+}
