@@ -23,19 +23,11 @@
     <section class="main">
         <section class="announcements">
             <?php
+                // Get role
                 $role = (isset($_SESSION["role"]))
                 ? $_SESSION["role"]
                 : "";
 
-                if ($role == "ADMIN" || $role == "SUPERUSER"):
-            ?>
-                <form action="createannouncement.php" method="POST" class="announcement-form">
-                    <h3 class='title'> New announcement</h3>
-                    <input type="text" class="text-input" placeholder="Content"></div>
-                    <input type="submit" value="Submit" class="button">
-                </form>
-            <?php endif ?>
-            <?php 
                 // Get announcements
                 include_once "../Includes/db.php";
                 $sql = 'SELECT * FROM nftshop_announcements';
@@ -48,6 +40,15 @@
                     return ($b["date"]) - ($a["date"]);
                 }
                 usort($announcements, "date_sort");
+
+                // Show create announcement menu if user is authorized
+                if ($role == "ADMIN" || $role == "SUPERUSER") {
+                    echo '<form action="createannouncement.php" method="POST" class="announcement-form">
+                            <h3 class="title"> New announcement</h3>
+                            <input type="text" class="text-input" placeholder="Message" name="content"></div>
+                            <input type="submit" value="Post" class="button">
+                        </form>';
+                }
 
                 // Display announcements
                 foreach ($announcements as $announcement) {
