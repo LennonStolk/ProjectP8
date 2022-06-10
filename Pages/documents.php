@@ -23,23 +23,36 @@
     <section class="main">
         <h3 class='title'>Files</h3>
         <section class="files">
-            <article class="file">
-                <img src="../Assets/document.png" class="file-img">
-                <p>Bestandje.pdf</p>
-                <?php
-                    // Get role
-                    $role = (isset($_SESSION["role"]))
-                        ? $_SESSION["role"]
-                        : "";
-                    
-                    // Show download button for admin
-                    if ($role == "ADMIN"):
-                ?>
-                    <a href="documents.php?download=Bestandje.pdf">
-                        <img src="../Assets/download.png" class="download">
-                    </a>
-                <?php endif ?>
-            </article>
+            <?php 
+                // Get role
+                $role = (isset($_SESSION["role"]))
+                    ? $_SESSION["role"]
+                    : "";
+
+                // Get document filenames
+                $filenames = scandir("../Documents");
+                $filenames = array_slice($filenames, 2);
+                
+                foreach ($filenames as $filename) {
+                    if ($role == "ADMIN") {
+                        echo "
+                            <article class='file'>
+                                <img src='../Assets/document.png' class='file-img'>
+                                <p>{$filename}</p>
+                                <a href='documents.php?download=Bestandje.pdf'>
+                                    <img src='../Assets/download.png' class='download'>
+                                </a>
+                            </article>";
+                    }
+                    else {
+                        echo "
+                            <article class='file'>
+                                <img src='../Assets/document.png' class='file-img'>
+                                <p>{$filename}</p>
+                            </article>";
+                    }
+                }
+            ?>
         </section>
     </section>
 </body>
