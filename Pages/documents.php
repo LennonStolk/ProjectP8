@@ -20,6 +20,25 @@
             border-bottom: solid rgb(27, 90, 86) 2px;
         }
     </style>
+    <?php 
+        // Get filename for download
+        $download_filename = (isset($_GET["filename"]))
+            ? basename($_GET["filename"])
+            : "";
+        $download_path = "../Documents/$download_filename";
+        
+        // Download file (Disables output buffer) then die
+        if (file_exists($download_path) && $download_filename !== "") {
+            if (ob_get_level()) ob_end_clean();
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename="'.basename($download_path).'"');
+            header('Content-Length: ' . filesize($download_path));
+            header('Pragma: public');
+            readfile($download_path, true);
+            exit;
+        }
+    ?>
     <section class="main">
         <h3 class='title'>Files</h3>
         <section class="files">
@@ -33,13 +52,15 @@
                 $filenames = scandir("../Documents");
                 $filenames = array_slice($filenames, 2);
                 
+                // Display files as html elements
                 foreach ($filenames as $filename) {
+                    $filename = htmlspecialchars($filename);
                     if ($role == "ADMIN") {
                         echo "
                             <article class='file'>
                                 <img src='../Assets/document.png' class='file-img'>
                                 <p>{$filename}</p>
-                                <a href='documents.php?download=Bestandje.pdf'>
+                                <a href='documents.php?filename={$filename}'>
                                     <img src='../Assets/download.png' class='download'>
                                 </a>
                             </article>";
