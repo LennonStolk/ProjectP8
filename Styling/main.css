@@ -123,6 +123,11 @@ body {
     box-shadow: inset 20px 20px 60px #e6e6e6, inset -20px -20px 60px #ffffff;
 }
 
+.announcement:hover {
+    filter: brightness(0.95);
+    transform: translateY(-3px);
+}
+
 .announcement-author {
     color: #69c2b6;
 }
@@ -191,6 +196,12 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     background: linear-gradient(180deg, rgb(205, 224, 255) 0%, rgb(225, 255, 213)100%);
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 100ms;
+}
+
+.file:hover {
+    filter: brightness(0.95);
+    transform: translateY(-3px);
 }
 
 .file-img {
@@ -215,4 +226,3 @@ body {
     width: 155px;
     text-align: right;
 }
-
