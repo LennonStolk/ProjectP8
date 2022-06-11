@@ -40,6 +40,11 @@
         }
     ?>
     <section class="main">
+        <form action="uploaddocument.php" method="post" enctype="multipart/form-data" class="file-form">
+            <h3 class='title'>Upload file (docx, pdf)</h3>
+            <input type="file" name="file">
+            <input type="submit" value="Upload" name="submit">
+        </form>
         <h3 class='title'>Files</h3>
         <section class="files">
             <?php 
