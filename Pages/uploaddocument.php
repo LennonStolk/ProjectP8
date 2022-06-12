@@ -2,6 +2,16 @@
 $target_file = "../Documents/" . basename($_FILES["file"]["name"]);
 $file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
+// Check if user is admin
+session_start();
+$role = (isset($_SESSION["role"]))
+    ? $_SESSION["role"]
+    : "";
+if ($role != "ADMIN") {
+    header("Location: documents.php");
+    exit;
+}
+
 // Check if file already exists
 if (file_exists($target_file)) {
     header("Location: documents.php");
