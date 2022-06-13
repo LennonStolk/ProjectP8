@@ -1,0 +1,16 @@
+Ik heb met de server verbonden via WinSCP en Putty.
+Ik heb het wachtwoord veranderd met 'passwd'.
+Ik heb een UFW regel toegevoegd voor ssh.
+Ik heb de UFW firewall aangezet.
+Deze packages heb ik geinstalleerd: PHP, MYSQL, APACHE. (via 'sudo apt install')
+
+Deze commands voor MySQL gebruikt:
+	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Tamboerijn18!';
+	CREATE USER 'admin'@'localhost' IDENTIFIED BY 'Tamboerijn18!';
+	GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+
+Deze commands voor Apache gebruikt:
+	sudo ufw allow 'Apache'
+	sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/mynewsite.conf
+	sudo a2ensite mynewsite
+	sudo systemctl restart apache2.service
