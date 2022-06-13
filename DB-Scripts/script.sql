@@ -23,13 +23,17 @@ INSERT INTO `nftshop_products` (`id`, `name`, `img_src`, `price`) VALUES
 (8, 'Peer', 'peer.gif', '4.20'),
 (9, 'Gele appel', 'appelgeel.png', '5.00'),
 (10, 'Groene appel', 'appelgroen.png', '5.00'),
-(11, 'Rode appel', 'appelrood.png', '5.00');
+(11, 'Rode appel', 'appelrood.png', '5.00'),
+(12, 'Sumo de eerste', 'sumo1.png', '2145.00'),
+(13, 'Sumo de tweede', 'sumo2.png', '2145.00'),
+(14, 'Sumo de derde', 'sumo3.png', '2145.00'),
+(15, 'Sumo de vierde', 'sumo4.png', '2145.00');
 
 ALTER TABLE `nftshop_products`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `nftshop_products`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 
 
