@@ -2,7 +2,7 @@ Ik heb met de server verbonden via WinSCP en Putty.
 Ik heb het wachtwoord veranderd met 'passwd'.
 Ik heb een UFW regel toegevoegd voor ssh.
 Ik heb de UFW firewall aangezet.
-Deze packages heb ik geinstalleerd: PHP, MYSQL, APACHE. (via 'sudo apt install')
+Deze packages heb ik geinstalleerd: php, mysql-server, apache2, libapache2-mod-php, php-mysql. (via 'sudo apt install')
 
 Deze commands voor MySQL gebruikt:
 	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Tamboerijn18!';
@@ -14,3 +14,11 @@ Deze commands voor Apache gebruikt:
 	sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/mynewsite.conf
 	sudo a2ensite mynewsite
 	sudo systemctl restart apache2.service
+
+Nu kan je inloggen met: `mysql --host=localhost --user=admin --password='Tamboerijn18!';`
+Daarna heb ik het database script uitgevoerd met: `source /var/www/html/DB-Scripts/script.sql`
+Nu kan je de producten tabel laten zien met: `SELECT * FROM nftshop.nftshop_products`
+Eerst even al mijn php bestandjes geupload naar de server.
+Daarna nog even het DB-verbinding php scriptje aangepast naar de juiste gegevens.
+
+IP: http://192.168.146.122/Pages/products.php
